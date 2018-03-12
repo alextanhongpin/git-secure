@@ -1,5 +1,7 @@
 # Git Secrets
 
+Adding Git Secrets to your workflow helps to prevent accidental commit of your credentials to your repo, whether it is your AWS, Facebook, or Twitter. You can also add custom regex to prevent other types of credentials such as password from being committed. 
+
 ## Installation
 
 ```bash
@@ -45,9 +47,7 @@ git secrets --add  '[0-9a-zA-Z_]{5,31} '
 git secrets --add  'R_[0-9a-f]{32}'
 git secrets --add  '[0-9]{13,17} '
 git secrets --add  '[0-9a-f]{32}'
-git secrets --add  '[0-9a-f]{32} '
 git secrets --add  '[0-9a-f]{16}'
-git secrets --add  '[0-9A-Z]{48} '
 git secrets --add  '[0-9A-Z]{48}'
 git secrets --add  '[0-9a-z]{12} '
 git secrets --add  '[0-9a-zA-Z]{16}'
@@ -57,7 +57,7 @@ git secrets --add  '[0-9a-zA-Z]{35,44}'
 
 ## Validate
 
-To validate that this is running, you can either scan the commits:
+There are two Java files and one `.env` file that contains the sensitive credentials. To validate that Git Secrets is running, you can either scan the commits:
 
 
 ```bash
